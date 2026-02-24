@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Tic Tac Toe - AI Game</title>
+    <link rel="stylesheet" href="super-tictactoe-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Super Tic Tac Toe</h1>
+            <p>Ultimate Strategy Game</p>
+        </header>
+
+        <!-- Game Mode Selection -->
+        <div id="modeSelection" class="mode-selection">
+            <div class="mode-card">
+                <h2>Select Game Mode</h2>
+                <div class="mode-buttons">
+                    <button class="mode-btn" id="playerVsAI">
+                        <span>🤖</span>
+                        <p>Play vs CPU</p>
+                    </button>
+                    <button class="mode-btn" id="playerVsPlayer">
+                        <span>👥</span>
+                        <p>Play with Friend</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Container -->
+        <div id="gameContainer" class="game-container" style="display: none;">
+            <div class="game-wrapper">
+                <!-- Left Panel: Leaderboard -->
+                <aside class="leaderboard-panel">
+                    <h3>📊 Leaderboard</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <label>Player X Wins</label>
+                            <span id="playerXWins">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <label>Draws</label>
+                            <span id="drawCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <label>Player O Wins</label>
+                            <span id="playerOWins">0</span>
+                        </div>
+                    </div>
+
+                    <h4>Best Records</h4>
+                    <div class="records">
+                        <div class="record-item">
+                            <span>X - Fewest Moves</span>
+                            <strong id="bestXMoves">-</strong>
+                        </div>
+                        <div class="record-item">
+                            <span>O - Fewest Moves</span>
+                            <strong id="bestOMoves">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="recent-wins">
+                        <h4>Recent Wins</h4>
+                        <ul id="recentWinsList"></ul>
+                    </div>
+                </aside>
+
+                <!-- Center Panel: Game Board -->
+                <div class="game-center">
+                    <!-- Game Info -->
+                    <div class="game-info">
+                        <div class="player-info">
+                            <span id="currentPlayer">Player X's Turn</span>
+                            <span id="moveCount">Moves: 0</span>
+                        </div>
+                        <div class="game-status" id="gameStatus"></div>
+                    </div>
+
+                    <!-- Super Board -->
+                    <div class="super-board">
+                        <div id="board" class="board-grid"></div>
+                    </div>
+
+                    <!-- Game Controls -->
+                    <div class="game-controls">
+                        <button class="control-btn" id="newGameBtn">
+                            <span>🔄</span> New Game
+                        </button>
+                        <button class="control-btn" id="resetScoreBtn">
+                            <span>🗑️</span> Reset Score
+                        </button>
+                        <button class="control-btn" id="changeMode">
+                            <span>🔙</span> Change Mode
+                        </button>
+                        <button class="control-btn undo-btn" id="undoBtn">
+                            <span>↶</span> Undo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Statistics -->
+                <aside class="stats-panel">
+                    <h3>📈 Game Stats</h3>
+                    <div class="game-stats">
+                        <div class="stat">
+                            <label>Total Games</label>
+                            <span id="totalGames">0</span>
+                        </div>
+                        <div class="stat">
+                            <label>Avg Moves/Game</label>
+                            <span id="avgMoves">0</span>
+                        </div>
+                        <div class="stat">
+                            <label>Win Rate</label>
+                            <span id="winRate">0%</span>
+                        </div>
+                        <div class="stat">
+                            <label>Current Streak</label>
+                            <span id="winStreak">0</span>
+                        </div>
+                    </div>
+
+                    <h4>Difficulty Level</h4>
+                    <div class="difficulty-selector" id="difficultySelector" style="display: none;">
+                        <button class="diff-btn active" data-level="easy">Easy</button>
+                        <button class="diff-btn" data-level="medium">Medium</button>
+                        <button class="diff-btn" data-level="hard">Hard</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <script src="super-tictactoe-script.js"></script>
+</body>
+</html>
